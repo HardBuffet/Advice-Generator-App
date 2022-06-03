@@ -1,0 +1,197 @@
+// ****************************************************************************
+// *                                A bit from me                                *
+// ****************************************************************************
+// below 390px of height scrollbar is show up
+// links from the attribution are too close or too small #a11y
+// I think that in the challenge i put a bit too much of fixed units
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ****************************************************************************
+// *                                  1. colors                                  *
+// ****************************************************************************
+$lightCyan: hsl(193, 38%, 86%);
+$neonGreen: hsl(150, 100%, 66%);
+$grayIshBlue: hsl(217, 19%, 38%);
+$darkGrayIshBlue: hsl(217, 19%, 24%);
+$darkBlue: hsl(218, 23%, 16%);
+
+// ****************************************************************************
+// *                                   2. fonts                                  *
+// ****************************************************************************
+$mainFont: 'Manrope', sans-serif;
+$fw-800: 800;
+
+// ****************************************************************************
+// *                                  3. mixins                                  *
+// ****************************************************************************
+@mixin flex($center: false) {
+  display: flex;
+  @if $center {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// ****************************************************************************
+// *                                   4. reset                                  *
+// ****************************************************************************
+* {
+  margin: 0;
+  padding: 0;
+  box: {
+    sizing: border-box;
+  }
+}
+
+body {
+  @include flex($center: true);
+  background: $darkBlue;
+  color: $lightCyan;
+  min: {
+    height: 100vh;
+  }
+  font: {
+    size: 1.75rem;
+    family: $mainFont;
+  }
+}
+
+b {
+  font: {
+    weight: $fw-800;
+  }
+}
+
+// ****************************************************************************
+// *                                  5. blocks                                  *
+// ****************************************************************************
+.c {
+  &-green {
+    color: $neonGreen;
+  }
+}
+
+.app {
+  width: 343px;
+  text: {
+    align: center;
+  }
+  &__top {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    padding: 40px 20px 55px;
+    border: {
+      radius: 10px;
+    }
+    background: $darkGrayIshBlue;
+  }
+
+  &__button {
+    margin: -30px auto; // the property is here because a block shouldn't have a margin
+  }
+}
+
+.title {
+  font: {
+    size: 0.8rem;
+  }
+  letter: {
+    spacing: 3px;
+  }
+}
+
+.quote {
+  font: {
+    size: 24px;
+  }
+
+  &__br {
+    display: none;
+  }
+}
+
+.button {
+  @include flex($center: true);
+  border: none {
+    radius: 50%;
+  }
+  cursor: pointer;
+  padding: 20px;
+
+// ****************************************************************************
+// * The button should be divided into separate files and then,
+// * the property on the bottom (transition) should be placed into a file
+// * with a hover effect,
+// * but for this short challenge I'll give up from that.
+// * By that, the code would be some cleaner.*
+// ****************************************************************************
+  transition: box-shadow 0.2s;
+
+  &_green {
+    background: $neonGreen;
+  }
+
+  &_hover:hover {
+    box: {
+      shadow: 0 0 30px $neonGreen;
+    }
+  }
+
+  &:focus {
+    outline: 3px solid red;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .app {
+    width: 540px;
+
+    &__top {
+      padding: 40px 35px 55px;
+    }
+  }
+
+  .quote {
+    font: {
+      size: 28px;
+    }
+    &__br {
+      display: block;
+    }
+  }
+}
+
+// footer
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: #111;
+  padding: 10px;
+
+  p {
+    line-height: 22px;
+    font-size: 1rem;
+  }
+
+  a {
+    color: cyan;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+@media screen and (max-height: 530px) {
+  .attribution {
+    display: none;
+  }
+}

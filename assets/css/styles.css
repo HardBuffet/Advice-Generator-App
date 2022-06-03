@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f2632;
+  color: #cee3e9;
+  min-height: 100vh;
+  font-size: 1.75rem;
+  font-family: "Manrope", sans-serif;
+}
+
+b {
+  font-weight: 800;
+}
+
+.c-green {
+  color: #52ffa8;
+}
+
+.app {
+  width: 343px;
+  text-align: center;
+}
+.app__top {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  padding: 40px 20px 55px;
+  border-radius: 10px;
+  background: #323a49;
+}
+.app__button {
+  margin: -30px auto;
+}
+
+.title {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+}
+
+.quote {
+  font-size: 24px;
+}
+.quote__br {
+  display: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 20px;
+  transition: box-shadow 0.2s;
+}
+.button_green {
+  background: #52ffa8;
+}
+.button_hover:hover {
+  box-shadow: 0 0 30px #52ffa8;
+}
+.button:focus {
+  outline: 3px solid red;
+}
+
+@media screen and (min-width: 800px) {
+  .app {
+    width: 540px;
+  }
+  .app__top {
+    padding: 40px 35px 55px;
+  }
+
+  .quote {
+    font-size: 28px;
+  }
+  .quote__br {
+    display: block;
+  }
+}
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: #111;
+  padding: 10px;
+}
+.attribution p {
+  line-height: 22px;
+  font-size: 1rem;
+}
+.attribution a {
+  color: cyan;
+}
+.attribution a:hover {
+  color: red;
+}
+
+@media screen and (max-height: 530px) {
+  .attribution {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
