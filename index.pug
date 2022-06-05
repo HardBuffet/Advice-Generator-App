@@ -8,31 +8,29 @@ html(lang='en')
     link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png")
     script(src="js/script.js" defer)
   body
-    .app
-      .app__top
-        p.title.c-green ADVICE #
-          |
-          span(data-advice-number) 117
-        .quote
-          q
-            b
-              span(data-quote) It is easy to sit up and take notice, what's difficult is getting
-              |
-              |
-              br.quote__br
-              | up and taking action.
-        picture
-          source(srcset="images/pattern-divider-desktop.svg" media="(min-width: 800px)")
-          img(src="images/pattern-divider-mobile.svg" alt="")
-      button.button.button_green.button_hover.app__button(data-display-advice)
-        img(src="images/icon-dice.svg" alt="")
-      footer.attribution
-            p
-              | Challenge by
-              |
-              a(href="https://www.frontendmentor.io?ref=challenge" target="_blank") Frontend Mentor
-              | .
-              br
-              | Coded by
-              |
-              a(href="https://www.frontendmentor.io/profile/HardBuffet") HardBuffet
+    main
+      h1 Generate an advice.
+      .app
+        .app__top(aria-atomic="true" aria-live="polite")
+          p.title.c-green ADVICE #
+            |
+            span(data-advice-number) 117
+          .quote
+            q
+              b
+                span(data-quote) It is easy to sit up and take notice, what's difficult is getting up and taking action.
+          picture
+            source(srcset="images/pattern-divider-desktop.svg" media="(min-width: 800px)")
+            img(src="images/pattern-divider-mobile.svg" alt="")
+        button.button.button_green.button_hover.app__button(data-display-advice aria-label="Next advice.")
+          img(src="images/icon-dice.svg" alt="")
+        footer.attribution
+              p
+                | Challenge by
+                |
+                a(href="https://www.frontendmentor.io?ref=challenge" target="_blank") Frontend Mentor
+                | .
+                br
+                | Coded by
+                |
+                a(href="https://www.frontendmentor.io/profile/HardBuffet") HardBuffet

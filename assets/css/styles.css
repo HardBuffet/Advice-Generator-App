@@ -20,6 +20,13 @@ b {
   font-weight: 800;
 }
 
+h1 {
+  position: fixed;
+  left: -1000vh;
+  z-index: -99999;
+  color: transparent;
+}
+
 .c-green {
   color: #52ffa8;
 }
@@ -65,11 +72,8 @@ b {
 .button_green {
   background: #52ffa8;
 }
-.button_hover:hover {
+.button_hover:hover, .button_hover:focus {
   box-shadow: 0 0 30px #52ffa8;
-}
-.button:focus {
-  outline: 3px solid red;
 }
 
 @media screen and (min-width: 800px) {
